@@ -1,0 +1,126 @@
+Project : Moove - Fleet Inventory Service
+
+url: https://fleet-management-cxksq3qqma-ey.a.run.app
+
+API 1
+---------------------------
+method : get
+
+end point: {{url}}
+
+parameters:
+	cloud_file_name
+	parent_group_name
+	gdatabase
+
+sample query: https://fleet-management-cxksq3qqma-ey.a.run.app?cloud_file_name=Country.xlsx&parent_group_name=PMI Global&gdatabase=pmi_uat
+
+-------------------------------------------------------------------------------------
+
+API 2
+---------------------------
+method : get
+
+end point: {{url}}/sync_group
+
+parameters:
+	gdatabase
+
+sample query: https://fleet-management-cxksq3qqma-ey.a.run.app/sync_group?gdatabase=pmi_uat
+
+--------------------------------------------------------------------------------------------
+
+API 3
+---------------------------
+method : get
+
+end point: {{url}}/get_successor
+parameters:
+	group_name
+	group_id
+	only_child
+	gdatabase
+
+sample query: https://fleet-management-cxksq3qqma-ey.a.run.app/get_successor?group_name=Make/Model&only_child=False&gdatabase=pmi_uat
+
+--------------------------------------------------------------------------------------------
+
+API 4
+---------------------------
+method : get
+
+end point: {{url}}/get_vehicle_data
+parameters:
+	Vehicle_ID_Number
+	Plate_Number
+	gdatabase
+
+sample query: https://fleet-management-cxksq3qqma-ey.a.run.app/get_vehicle_data?Vehicle_ID_Number=9YJ3E7EB2LF571037&Plate_Number=HX-057-J&gdatabase=pmi_uat
+
+--------------------------------------------------------------------------------------------
+
+API 5
+---------------------------
+method : post
+
+end point: {{url}}/set_vehicle_data
+json data:
+	{
+    "gdatabase":"pmi_uat",
+    "Plate_Number" :"",
+    "Vehicle_ID_Number" : "",
+    "In_Fleeting_Date" : "",
+    "De_Fleeting_Date" : "",
+    "Brand":"",
+    "Buy_or_Lease":"",
+    "Car_Category":"",
+    "Country":"",
+    "Leasing_Group":"",
+    "Legal_Entity_Code":"",
+    "Local_Currency":"",
+    "Model":"",
+    "Non_ReimbursableVAT":"",
+    "OEM_Group":"",
+    "Owner":"",
+    "PowerTrain":"",
+    "Status":"",
+    "Car_Sub_Category":"",
+    "Type_of_Vehicle":"",
+    "Model_Description":"",
+    "Contracted_milage":"",
+    "Current_milage":"",
+    "Exch_rate":"",
+    "CO2_Emission":"",
+    "Cost":"",
+    "Comments":"",
+    "Driver_Name" :"",
+    "Driver_Liscense":"",
+    "Driver_email":""
+}
+
+sample query: https://fleet-management-cxksq3qqma-ey.a.run.app//set_vehicle_data
+
+sample json data:
+	{
+    "gdatabase":"pmi_uat",
+    "Plate_Number" :"HX-057-J",
+    "Vehicle_ID_Number" : "9YJ3E7EB2LF571037",
+    "In_Fleeting_Date" : "22-09-2021",
+    "De_Fleeting_Date" : "22-09-2022",
+    "Brand":"BMW",
+--------------------------------------------------------------------------------------------
+
+API 6
+---------------------------
+method : get
+
+end point: {{url}}/delete_group_data
+parameters:
+	group_id
+	gdatabase
+
+sample query: https://fleet-management-cxksq3qqma-ey.a.run.app/delete_group_data?group_id=b2BC8&gdatabase=pmi_uat
+
+--------------------------------------------------------------------------------------------
+
+
